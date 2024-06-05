@@ -1,18 +1,18 @@
 "use strict";
 const { Storage } = require("@google-cloud/storage");
-const dateFormat = require("dateformat");
+const { format } = require("date-fns");
 const path = require("path");
 
-const pathKey = path.resolve("../credentials.json");
+const pathKey = path.resolve("./credentials.json");
 
 // TODO: Sesuaikan konfigurasi Storage
 const gcs = new Storage({
-  projectId: process.env.PROJECT_ID,
+  projectId: "project_Id",
   keyFilename: pathKey,
 });
 
 // TODO: Tambahkan nama bucket yang digunakan
-const bucketName = process.env.BUCKET_NAME;
+const bucketName = "bucket_name";
 const bucket = gcs.bucket(bucketName);
 
 function getPublicUrl(filename) {
@@ -28,7 +28,7 @@ ImgUpload.uploadToGcs = async (request, h, gcsFolder) => {
     return h.response({ error: "No file uploaded" }).code(400);
   }
 
-  const gcsname = `${gcsFolder}/${dateFormat(
+  const gcsname = `${gcsFolder}/${format(
     new Date(),
     "yyyymmdd-HHMMss"
   )}${path.extname(file.hapi.filename)}`;

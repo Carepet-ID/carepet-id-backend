@@ -2,7 +2,7 @@ const Joi = require("@hapi/joi");
 
 const dogCreateSchema = Joi.object({
   id: Joi.forbidden(),
-  photo: Joi.string().uri().required(),
+  photo: Joi.any().required(),
   name: Joi.string().min(3).max(30).required(),
   about: Joi.string().max(500),
   age: Joi.number().integer().min(0).required(),
@@ -16,7 +16,7 @@ const dogCreateSchema = Joi.object({
 
 const dogUpdateSchema = Joi.object({
   id: Joi.forbidden(),
-  photo: Joi.string().uri(),
+  photo: Joi.any(),
   name: Joi.string().min(3).max(30),
   about: Joi.string().max(500),
   age: Joi.number().integer().min(0),

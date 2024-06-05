@@ -2,7 +2,7 @@ const Joi = require("@hapi/joi");
 
 const productCreateSchema = Joi.object({
   id: Joi.forbidden(),
-  photo: Joi.string().uri().required(),
+  photo: Joi.any().required(),
   name: Joi.string().min(5).max(50).required(),
   category: Joi.string().required(),
   price: Joi.number().required(),
@@ -11,7 +11,7 @@ const productCreateSchema = Joi.object({
 
 const productUpdateSchema = Joi.object({
   id: Joi.forbidden(),
-  photo: Joi.string().uri(),
+  photo: Joi.any(),
   name: Joi.string().min(5).max(50),
   category: Joi.string(),
   price: Joi.number(),

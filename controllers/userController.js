@@ -1,6 +1,7 @@
 const userService = require("../services/userService");
 const jwt = require("jsonwebtoken");
-const { jwtSecret } = require("../config/jwtConfig");
+const { jwtSecret, jwtExpiration } = require("../config/jwtConfig");
+const ImgUpload = require("../module/imgUpload");
 
 const register = async (request, h) => {
   try {
@@ -33,7 +34,7 @@ const login = async (request, h) => {
     const token = jwt.sign(
       { id: user.id, username: user.username },
       jwtSecret,
-      { algorithm: "HS256", expiresIn: "5h" }
+      { algorithm: "HS256", expiresIn: jwtExpiration }
     );
     return h
       .response({ message: "Login successful" })

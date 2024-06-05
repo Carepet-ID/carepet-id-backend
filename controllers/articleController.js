@@ -21,7 +21,7 @@ const getArticlesByCategory = async (request, h) => {
 };
 const getArticleById = async (request, h) => {
   try {
-    const articles = await articleService.getArticlesById(request.params.id);
+    const articles = await articleService.getArticleById(request.params.id);
     return h.response(articles).code(200);
   } catch (error) {
     return h.response({ error: error.message }).code(500);

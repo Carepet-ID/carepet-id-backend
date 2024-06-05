@@ -58,7 +58,7 @@ module.exports = [
   },
   {
     method: "PUT",
-    path: "/disease",
+    path: "/disease/{id}",
     handler: updateDisease,
     options: {
       payload: {
@@ -77,7 +77,7 @@ module.exports = [
   },
   {
     method: "DELETE",
-    path: "/disease",
+    path: "/disease/{id}",
     handler: deleteDisease,
     options: {
       auth: "jwt",

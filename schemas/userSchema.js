@@ -7,7 +7,7 @@ const userLoginSchema = Joi.object({
 });
 
 const userCreateSchema = Joi.object({
-  photo: Joi.string().uri().required(),
+  photo: Joi.any().required(),
   username: Joi.string().required(),
   email: Joi.string().email().required(),
   password: Joi.string().min(8).required(),
@@ -18,7 +18,7 @@ const userCreateSchema = Joi.object({
 });
 
 const userUpdateSchema = Joi.object({
-  photo: Joi.string().uri(),
+  photo: Joi.any(),
   username: Joi.string(),
   email: Joi.string().email(),
   password: Joi.string().min(8),

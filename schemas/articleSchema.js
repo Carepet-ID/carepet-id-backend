@@ -2,7 +2,7 @@ const Joi = require("@hapi/joi");
 
 const articleCreateSchema = Joi.object({
   id: Joi.forbidden(),
-  photo: Joi.string().uri().required(),
+  photo: Joi.any().required(),
   title: Joi.string().min(10).required(),
   category: Joi.string().required(),
   content: Joi.string().required(),
@@ -12,7 +12,7 @@ const articleCreateSchema = Joi.object({
 
 const articleUpdateSchema = Joi.object({
   id: Joi.forbidden(),
-  photo: Joi.string().uri(),
+  photo: Joi.any(),
   title: Joi.string().min(10),
   category: Joi.string(),
   content: Joi.string(),

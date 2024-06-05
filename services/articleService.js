@@ -32,7 +32,7 @@ const getArticleById = async (articleId) => {
 
 const createArticle = async (payload) => {
   try {
-    const article = await Article.create(...payload);
+    const article = await Article.create({ ...payload });
     return article;
   } catch (error) {
     throw error;

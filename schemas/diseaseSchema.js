@@ -2,7 +2,7 @@ const Joi = require("@hapi/joi");
 
 const diseaseCreateSchema = Joi.object({
   id: Joi.forbidden(),
-  photo: Joi.string().uri().required(),
+  photo: Joi.any().required(),
   name: Joi.string().min(10).required(),
   category: Joi.string().required(),
   description: Joi.string().min(10).max(100).required(),
@@ -12,7 +12,7 @@ const diseaseCreateSchema = Joi.object({
 
 const diseaseUpdateSchema = Joi.object({
   id: Joi.forbidden(),
-  photo: Joi.string().uri(),
+  photo: Joi.any(),
   name: Joi.string().min(10),
   category: Joi.string().required(),
   description: Joi.string().min(10).max(100),
