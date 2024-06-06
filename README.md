@@ -4,13 +4,13 @@
 <p>1. Clone this repository</p>
 
 ```
-git clone https://github.com/hanaask/CARE-PET--Capstone-Project.git
+git clone https://github.com/Carepet-ID/carepet-id-backend.git
 ```
 
 <p>2. Change directory</p>
 
 ```
-cd CARE-PET--Capstone-Project
+cd carepet-id-backend
 ```
 
 <p>3. Install project depedencies</p>
