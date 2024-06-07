@@ -7,6 +7,8 @@ const { User } = require("./models");
 const Boom = require("boom");
 require("dotenv").config();
 
+const loadModel = require("./module/loadModel");
+
 const validate = async function (decoded, request, h) {
   // Lakukan validasi token di sini (misalnya memeriksa di database)
   const user = await User.findByPk(decoded.id);
@@ -23,14 +25,17 @@ const validate = async function (decoded, request, h) {
 
 const init = async () => {
   const server = Hapi.server({
-    port: 3000,
-    host: "localhost",
+    port: process.env.PORT,
+    host: "0.0.0.0",
     routes: {
       cors: {
         origin: ["*"],
       },
     },
   });
+
+  const model = await loadModel();
+  server.app.model = model;
 
   await server.register(require("hapi-auth-jwt2"));
   server.auth.strategy("jwt", "jwt", {

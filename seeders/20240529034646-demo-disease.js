@@ -31,7 +31,7 @@ module.exports = {
         id: "3b4c5d6e-7890-1abc-def2-3456789012cd",
         photo:
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaNvz-xS6DPvtHrjwR9PkA3ll5E3AtGC7MkQ&s",
-        name: "Ear Infection",
+        name: "EarInfection",
         category: "Ear",
         symptoms: "Ear Pain, Discharge, Hearing Loss",
         description:
@@ -67,7 +67,7 @@ module.exports = {
         id: "6e7f8g9h-0123-4abc-def5-6789012345fg",
         photo:
           "https://images.ctfassets.net/4dmg3l1sxd6g/3p5WtSlMV6yBw0SvLUOLG5/b324341d1da399f0f8cd520907cc16df/1-sebaceous-hyperplasia_0-45636-gallery.jpg_-_en",
-        name: "Skin Tumors",
+        name: "SkinTumors",
         category: "Skin",
         symptoms: "Lumps, Discoloration, Ulcers",
         description:

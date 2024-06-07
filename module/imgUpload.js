@@ -3,16 +3,17 @@ const { Storage } = require("@google-cloud/storage");
 const { format } = require("date-fns");
 const path = require("path");
 
-const pathKey = path.resolve("./credentials.json");
+// TODO: Ganti dengan path ke file kunci JSON dari service account Anda
+const pathKey = path.resolve("/path/to/your/service-account-key.json");
 
 // TODO: Sesuaikan konfigurasi Storage
 const gcs = new Storage({
-  projectId: "project_Id",
+  projectId: "your-project-id",
   keyFilename: pathKey,
 });
 
 // TODO: Tambahkan nama bucket yang digunakan
-const bucketName = "bucket_name";
+const bucketName = "your-bucket-name";
 const bucket = gcs.bucket(bucketName);
 
 function getPublicUrl(filename) {

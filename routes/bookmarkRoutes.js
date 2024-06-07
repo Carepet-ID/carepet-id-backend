@@ -4,6 +4,7 @@ const {
   addBookmark,
   deleteBookmark,
 } = require("../controllers/bookmarkController");
+const verifyRole = require("../module/roleAuth");
 
 module.exports = [
   {

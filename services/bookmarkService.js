@@ -1,15 +1,13 @@
-const { Article, Bookmark, User } = require("../models");
+const { Article, Bookmark } = require("../models");
 
 const getAllBookmarks = async (userId) => {
   try {
-    const bookmarks = Bookmark.findAll(
-      { where: { userId } },
-      {
-        include: {
-          model: Article,
-        },
-      }
-    );
+    const bookmarks = await Bookmark.findAll({
+      where: { userId },
+      include: {
+        model: Article,
+      },
+    });
     return bookmarks;
   } catch (error) {
     throw error;
