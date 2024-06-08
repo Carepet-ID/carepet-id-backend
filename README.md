@@ -65,6 +65,10 @@ PORT=(free)
 npm run start:dev
 ```
 
+<h2>Architecture:</h2>
+![alt text](<img width="422" src="https://github.com/Carepet-ID/carepet-id-backend/assets/160591485/da6e3bb5-0f32-4258-80b5-a92f1cbb3607">
+?raw=true)
+
 
 <br>
 <br>
