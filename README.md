@@ -64,10 +64,20 @@ PORT=(free)
 ```
 npm run start:dev
 ```
+<br>
+<br>
+<hr>
+<br>
+<h2>ERD Detection Skin Disease</h2>
+<img width="338" alt="ERD" src="https://github.com/Carepet-ID/carepet-id-backend/assets/160591485/9431b786-d37e-4eec-8bed-1ab807631bb1">
 
+
+<br>
+<br>
+<hr>
+<br>
 <h2>Architecture:</h2>
 <img width="422" src="https://github.com/Carepet-ID/carepet-id-backend/assets/160591485/da6e3bb5-0f32-4258-80b5-a92f1cbb3607">
-
 
 
 <br>
