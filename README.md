@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 <h1 align="center" id="title">Carepet ID</h1>
 
 <h2>🛠️ Installation Steps:</h2>
@@ -36,25 +34,16 @@ npx sequelize-cli db:seed:all
 ```
 projectId: "your-project-id"
 ```
-TO
-
-```
-projectId:"carepet-project"
-```
 
 <p>7. Change bucketName in module/imgUpload.js</p>
 
 ```
 bucketName = "your-bucket-name"
 ```
-TO
-```
-bucketName = "carepet-storage"
-```
 <p>8. Create .env and fill in the text below</p>
 
 ```
-MODEL_URL=https://storage.googleapis.com/carepet-storage/model-in-prod/model.json
+MODEL_URL=(your_model_url)
 JWT_SECRET=(free)
 JWT_EXPIRATION=(free)
 PORT=(free)
@@ -110,4 +99,3 @@ carepet-api/
 ├── package.json
 └── README.md
 ```
->>>>>>> 0017e00e629ce1a1830374b2999a6905506ceffe
