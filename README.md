@@ -74,6 +74,7 @@ npm run start:dev
 
 - Create several secret for environments
 - An example can be seen in the image below
+![secret manager](https://github.com/Carepet-ID/carepet-id-backend/assets/90903908/e5f66338-4068-422e-b394-8638c921968c)
 
 <h3>Service Account</h3>
 
@@ -84,6 +85,7 @@ npm run start:dev
     - Secret Manager Secret Accessor role
     - Cloud Run Admin role
 - An example can be seen in the image below
+![Screenshot 2024-06-15 123742](https://github.com/Carepet-ID/carepet-id-backend/assets/90903908/4d496a40-fb86-4c18-a579-81fa3f007632)
 
 <h3>Cloud Run</h3>
 
