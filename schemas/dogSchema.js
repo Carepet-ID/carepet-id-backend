@@ -16,14 +16,14 @@ const dogCreateSchema = Joi.object({
 
 const dogUpdateSchema = Joi.object({
   id: Joi.forbidden(),
-  photo: Joi.any(),
-  name: Joi.string().min(3).max(30),
-  about: Joi.string().max(500),
-  age: Joi.number().integer().min(0),
-  birthday: Joi.date(),
-  breed: Joi.string(),
-  skinColor: Joi.string(),
-  gender: Joi.string().valid("male", "female"),
+  photo: Joi.any().optional(),
+  name: Joi.string().min(3).max(30).optional(),
+  about: Joi.string().max(500).optional(),
+  age: Joi.number().integer().min(0).optional(),
+  birthday: Joi.date().optional(),
+  breed: Joi.string().optional(),
+  skinColor: Joi.string().optional(),
+  gender: Joi.string().valid("male", "female").optional(),
   createdAt: Joi.forbidden(),
   updatedAt: Joi.forbidden(),
 });

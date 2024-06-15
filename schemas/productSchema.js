@@ -11,11 +11,11 @@ const productCreateSchema = Joi.object({
 
 const productUpdateSchema = Joi.object({
   id: Joi.forbidden(),
-  photo: Joi.any(),
-  name: Joi.string().min(5).max(50),
-  category: Joi.string(),
-  price: Joi.number(),
-  linkStore: Joi.string(),
+  photo: Joi.any().optional(),
+  name: Joi.string().min(5).max(50).optional(),
+  category: Joi.string().optional(),
+  price: Joi.number().optional(),
+  linkStore: Joi.string().optional(),
 });
 
 module.exports = { productCreateSchema, productUpdateSchema };

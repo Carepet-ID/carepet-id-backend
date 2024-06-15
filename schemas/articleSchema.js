@@ -12,10 +12,10 @@ const articleCreateSchema = Joi.object({
 
 const articleUpdateSchema = Joi.object({
   id: Joi.forbidden(),
-  photo: Joi.any(),
-  title: Joi.string().min(10),
-  category: Joi.string(),
-  content: Joi.string(),
+  photo: Joi.any().optional(),
+  title: Joi.string().min(10).optional(),
+  category: Joi.string().optional(),
+  content: Joi.string().optional(),
   createdAt: Joi.forbidden(),
   updatedAt: Joi.forbidden(),
 });

@@ -12,12 +12,12 @@ const diseaseCreateSchema = Joi.object({
 
 const diseaseUpdateSchema = Joi.object({
   id: Joi.forbidden(),
-  photo: Joi.any(),
-  name: Joi.string().min(10),
-  category: Joi.string().required(),
-  description: Joi.string().min(10).max(100),
-  symptoms: Joi.string(),
-  treatment: Joi.string().min(50),
+  photo: Joi.any().optional(),
+  name: Joi.string().min(10).optional(),
+  category: Joi.string().required().optional(),
+  description: Joi.string().min(10).max(200).optional(),
+  symptoms: Joi.string().optional(),
+  treatment: Joi.string().min(50).optional(),
 });
 
 module.exports = { diseaseCreateSchema, diseaseUpdateSchema };

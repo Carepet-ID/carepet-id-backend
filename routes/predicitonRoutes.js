@@ -8,7 +8,7 @@ module.exports = [
     handler: postPredictHandler,
     options: {
       payload: {
-        allow: ["multipart/form-data"],
+        allow: ["application/json", "multipart/form-data"],
         multipart: true,
         // output: "stream", // Needed for handling file upload
         // parse: true,

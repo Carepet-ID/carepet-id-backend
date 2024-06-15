@@ -43,7 +43,7 @@ module.exports = [
     handler: createDisease,
     options: {
       payload: {
-        allow: ["multipart/form-data"],
+        allow: ["application/json", "multipart/form-data"],
         multipart: true,
         output: "stream", // Needed for handling file upload
         parse: true,
@@ -51,9 +51,9 @@ module.exports = [
       },
       auth: "jwt",
       pre: [{ method: verifyRole("canCreateAllData") }],
-      validate: {
-        payload: diseaseCreateSchema,
-      },
+      // validate: {
+      //   payload: diseaseCreateSchema,
+      // },
     },
   },
   {
@@ -62,7 +62,7 @@ module.exports = [
     handler: updateDisease,
     options: {
       payload: {
-        allow: ["multipart/form-data"],
+        allow: ["application/json", "multipart/form-data"],
         multipart: true,
         output: "stream", // Needed for handling file upload
         parse: true,
@@ -70,9 +70,9 @@ module.exports = [
       },
       auth: "jwt",
       pre: [{ method: verifyRole("canUpdateAllData") }],
-      validate: {
-        payload: diseaseUpdateSchema,
-      },
+      // validate: {
+      //   payload: diseaseUpdateSchema,
+      // },
     },
   },
   {

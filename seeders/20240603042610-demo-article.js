@@ -16,7 +16,7 @@ module.exports = {
       {
         id: "879f4637-2f34-4e89-92b8-c856e95fdc36",
         photo:
-          "https://www.purina.com/_gatsby/image/a8e31276edd3417015e904b0cfe77f6c/17bad0d81e21f77a8117a01758b60559/should-you-feed-your-dog-a-sensitive-skin-dog-food-1.avif?u=https%3A%2F%2Fwww.purina.com%2Fsites%2Fdefault%2Ffiles%2F2023-02%2Fshould-you-feed-your-dog-a-sensitive-skin-dog-food-1.jpg&a=w%3D800%26h%3D400%26fm%3Davif%26q%3D75&cd=544ff28d7cc04d6bd71b8e4b66482c5a",
+          "https://cdn.britannica.com/79/232779-050-6B0411D7/German-Shepherd-dog-Alsatian.jpg",
         title: "Dog Sensitive Skin: Causes & Treatment",
         category: "Health",
         content:
@@ -27,7 +27,7 @@ module.exports = {
       {
         id: "03dde6ba-0bad-4726-824f-0938a891d276",
         photo:
-          "https://www.purina.com/_gatsby/image/035f202f018ed3e8a7501048737932d6/17bad0d81e21f77a8117a01758b60559/is-corn-good-for-my-dog_2.avif?u=https%3A%2F%2Fwww.purina.com%2Fsites%2Fdefault%2Ffiles%2F2023-06%2Fis-corn-good-for-my-dog_2.jpg&a=w%3D800%26h%3D400%26fm%3Davif%26q%3D75&cd=ce91ce13b9329139ec4522b8db5f647f",
+          "https://cdn.britannica.com/79/232779-050-6B0411D7/German-Shepherd-dog-Alsatian.jpg",
         title: "Is Corn Good for My Dog?",
         category: "Health",
         content:
@@ -38,7 +38,7 @@ module.exports = {
       {
         id: "cf74f5bb-a1ff-48c5-a4e4-d277b3e602fa",
         photo:
-          "https://www.purina.com/_gatsby/image/497d66e4aed33c786770a8811e0bea06/17bad0d81e21f77a8117a01758b60559/best-protein-for-dogs.avif?u=https%3A%2F%2Fwww.purina.com%2Fsites%2Fdefault%2Ffiles%2F2023-01%2Fbest-protein-for-dogs.jpg&a=w%3D800%26h%3D400%26fm%3Davif%26q%3D75&cd=e0337086574304ef7d0a43cdb8cfc5cc",
+          "https://cdn.britannica.com/79/232779-050-6B0411D7/German-Shepherd-dog-Alsatian.jpg",
         title: "What Are the Benefits of High Protein Dog Food?",
         category: "Health",
         content:

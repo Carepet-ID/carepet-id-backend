@@ -45,7 +45,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       role: {
-        type: DataTypes.STRING,
+        type: DataTypes.ENUM('user', 'admin'),
         allowNull: false,
       },
     },
@@ -59,10 +59,13 @@ module.exports = (sequelize, DataTypes) => {
             user.password = await bcrypt.hash(user.password, salt);
           }
         },
-        beforeUpdate: async (user, options) => {
-          if (user.password) {
+        beforeBulkUpdate: async (options) => {
+          if (options.attributes.password) {
             const salt = await bcrypt.genSalt(10);
-            user.password = await bcrypt.hash(user.password, salt);
+            options.attributes.password = await bcrypt.hash(
+              options.attributes.password,
+              salt
+            );
           }
         },
       },

@@ -7,7 +7,7 @@ const userLoginSchema = Joi.object({
 });
 
 const userCreateSchema = Joi.object({
-  photo: Joi.any().required(),
+  photo: Joi.any().optional(),
   username: Joi.string().required(),
   email: Joi.string().email().required(),
   password: Joi.string().min(8).required(),
@@ -18,10 +18,10 @@ const userCreateSchema = Joi.object({
 });
 
 const userUpdateSchema = Joi.object({
-  photo: Joi.any(),
-  username: Joi.string(),
-  email: Joi.string().email(),
-  password: Joi.string().min(8),
+  photo: Joi.any().optional(),
+  username: Joi.string().optional(),
+  email: Joi.string().email().optional(),
+  password: Joi.string().min(8).optional(),
   role: Joi.forbidden(), // Role tidak dapat diubah saat pembaruan
   id: Joi.forbidden(),
   createdAt: Joi.forbidden(),

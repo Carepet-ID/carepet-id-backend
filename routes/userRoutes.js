@@ -18,16 +18,16 @@ module.exports = [
     handler: register,
     options: {
       payload: {
-        allow: ["multipart/form-data"],
+        allow: ["application/json", "multipart/form-data"],
         multipart: true,
         output: "stream", // Needed for handling file upload
         parse: true,
         maxBytes: 10 * 1024 * 1024,
       },
       auth: false, // Tidak memerlukan autentikasi JWT untuk registrasi
-      validate: {
-        payload: userCreateSchema,
-      },
+      // validate: {
+      //   payload: userCreateSchema,
+      // },
     },
   },
   {

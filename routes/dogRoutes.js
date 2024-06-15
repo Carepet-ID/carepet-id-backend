@@ -16,15 +16,15 @@ module.exports = [
     handler: addDog,
     options: {
       payload: {
-        allow: ["multipart/form-data"],
+        allow: ["application/json", "multipart/form-data"],
         multipart: true,
         output: "stream", // Needed for handling file upload
         parse: true,
         maxBytes: 10 * 1024 * 1024,
       },
-      validate: {
-        payload: dogCreateSchema,
-      },
+      // validate: {
+      //   payload: dogCreateSchema,
+      // },
       auth: "jwt",
       pre: [{ method: verifyRole("canCreateOwnData") }],
     },
@@ -53,15 +53,15 @@ module.exports = [
     handler: updateDog,
     options: {
       payload: {
-        allow: ["multipart/form-data"],
+        allow: ["application/json", "multipart/form-data"],
         multipart: true,
         output: "stream", // Needed for handling file upload
         parse: true,
         maxBytes: 10 * 1024 * 1024,
       },
-      validate: {
-        payload: dogUpdateSchema,
-      },
+      // validate: {
+      //   payload: dogUpdateSchema,
+      // },
       auth: "jwt",
       pre: [{ method: verifyRole("canUpdateOwnData") }],
     },

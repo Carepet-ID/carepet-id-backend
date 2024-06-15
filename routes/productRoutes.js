@@ -34,7 +34,7 @@ module.exports = [
     handler: createProduct,
     options: {
       payload: {
-        allow: ["multipart/form-data"],
+        allow: ["application/json", "multipart/form-data"],
         multipart: true,
         output: "stream", // Needed for handling file upload
         parse: true,
@@ -42,9 +42,9 @@ module.exports = [
       },
       auth: "jwt",
       pre: [{ method: verifyRole("canCreateAllData") }],
-      validate: {
-        payload: productCreateSchema,
-      },
+      // validate: {
+      //   payload: productCreateSchema,
+      // },
     },
   },
   {
@@ -53,7 +53,7 @@ module.exports = [
     handler: updateProduct,
     options: {
       payload: {
-        allow: ["multipart/form-data"],
+        allow: ["application/json", "multipart/form-data"],
         multipart: true,
         output: "stream", // Needed for handling file upload
         parse: true,
@@ -61,9 +61,9 @@ module.exports = [
       },
       auth: "jwt",
       pre: [{ method: verifyRole("canUpdateAllData") }],
-      validate: {
-        payload: productUpdateSchema,
-      },
+      // validate: {
+      //   payload: productUpdateSchema,
+      // },
     },
   },
   {
