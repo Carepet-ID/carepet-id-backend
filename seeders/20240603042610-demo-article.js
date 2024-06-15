@@ -27,7 +27,7 @@ module.exports = {
       {
         id: "03dde6ba-0bad-4726-824f-0938a891d276",
         photo:
-          "https://cdn.britannica.com/79/232779-050-6B0411D7/German-Shepherd-dog-Alsatian.jpg",
+          "https://www.southernliving.com/thmb/WHH7cdFT3YMJlJN4y7y3lsAKvJ8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/gettyimages-114166947-1-268128f97e5c415baede328c1fe32f55.jpg",
         title: "Is Corn Good for My Dog?",
         category: "Health",
         content:
@@ -38,7 +38,7 @@ module.exports = {
       {
         id: "cf74f5bb-a1ff-48c5-a4e4-d277b3e602fa",
         photo:
-          "https://cdn.britannica.com/79/232779-050-6B0411D7/German-Shepherd-dog-Alsatian.jpg",
+          "https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/advisor/wp-content/uploads/2023/07/top-20-small-dog-breeds.jpeg.jpg",
         title: "What Are the Benefits of High Protein Dog Food?",
         category: "Health",
         content:
