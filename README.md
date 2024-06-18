@@ -9,7 +9,7 @@
 <h2>Development</h2>
 
 - Clone this repository
-  
+
 ```
 git clone https://github.com/Carepet-ID/carepet-id-backend.git
 ```
@@ -30,7 +30,7 @@ JWT_EXPIRATION="<JWT_EXPIRATION>"
 MODEL_URL="<MODEL_MACHINE_LEARNING_URL>"
 ```
 
-- Install project depedencies
+- Install project depedencies use terminal `Ubuntu(WSL)`
 
 ```
 npm install
@@ -48,7 +48,7 @@ npx sequelize-cli db:migrate
 npx sequelize-cli db:seed:all
 ```
 
-- Run the application use Ubuntu(WSL)
+- Run the application use terminal `Ubuntu(WSL)`
 
 ```
 npm run start:dev
@@ -76,7 +76,7 @@ npm run start:dev
 
 - Create several secret for environments
 - An example can be seen in the image below
-![Secret Manager](https://github.com/Carepet-ID/carepet-id-backend/assets/90903908/dd11abbd-e24b-424e-962b-d401acab441d)
+  ![Secret Manager](https://github.com/Carepet-ID/carepet-id-backend/assets/90903908/dd11abbd-e24b-424e-962b-d401acab441d)
 
 <h3>Service Account</h3>
 
@@ -85,7 +85,7 @@ npm run start:dev
     - Secret Manager Secret Accessor role
     - Storage object admin
 - An example can be seen in the image below
-![Service Account](https://github.com/Carepet-ID/carepet-id-backend/assets/90903908/1bc8aed3-977f-41f0-bb18-00c718f05e83)
+  ![Service Account](https://github.com/Carepet-ID/carepet-id-backend/assets/90903908/1bc8aed3-977f-41f0-bb18-00c718f05e83)
 
 <h3>Cloud Run</h3>
 
@@ -95,5 +95,5 @@ npm run start:dev
   - Ingress control: `All`
   - Authentication: `Allow unauthenticated invocations`
   - Service account: `Carepet Cloud Run Service`
+  - Set NODE_ENV: --set-env-vars "NODE_ENV=production"
 - The required outcomes is `CAREPET_API` (URL Carepet API service)
-
