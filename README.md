@@ -51,7 +51,7 @@ npm run seed:dev
 - Run the application use terminal `Ubuntu(WSL)`
 
 ```
-npm run start:dev
+npm run start
 ```
 
 <h2>Deployment</h2>
