@@ -74,12 +74,13 @@ const profile = async (request, h) => {
 
 const updateUser = async (request, h) => {
   try {
+    const userId = request.auth.credentials.id;
+
     // Lakukan pengunggahan foto ke GCS
-    const gcsResponse = await ImgUpload.uploadToGcs(request, h, "users");
+    const gcsResponse = await ImgUpload.uploadToGcs(request, h, `users/${userId}`);
     const { url } = gcsResponse.source; // Ambil URL foto dari respons
     request.payload.photo = url;
-
-    const userId = request.auth.credentials.id;
+    
     await userService.updateUser(userId, request.payload);
 
     return h

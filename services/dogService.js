@@ -98,6 +98,13 @@ const deleteDog = async (userId, dogId) => {
       throw Boom.unauthorized("You are not authorized to delete this dog");
     }
 
+    await UserDog.destroy({
+      where: {
+        userId: userId,
+        dogId: dogId,
+      },
+    });
+
     await Dog.destroy({
       where: {
         id: dogId,

@@ -61,7 +61,9 @@ const deleteProduct = async (productId) => {
       throw Boom.notFound("Product not found");
     }
 
-    await Product.destroy({ where: { id: ProductId } });
+    await Product.destroy({ where: { id: productId } });
+    await DiseaseProduct.destroy({where: {productId: productId}})
+    
   } catch (error) {
     throw error;
   }

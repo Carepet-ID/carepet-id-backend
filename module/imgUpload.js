@@ -4,16 +4,11 @@ const { format } = require("date-fns");
 const path = require("path");
 require("dotenv").config();
 
-const credentials = JSON.parse(process.env.IMG_UPLOAD);
-
 // TODO: Sesuaikan konfigurasi Storage
-const gcs = new Storage({
-  projectId: credentials.project_id,
-  credentials: credentials
-});
+const gcs = new Storage();
 
 // TODO: Tambahkan nama bucket yang digunakan
-const bucketName = "carepet-storage";
+const bucketName = process.env.BUCKET_NAME;
 const bucket = gcs.bucket(bucketName);
 
 function getPublicUrl(filename) {
@@ -48,8 +43,8 @@ ImgUpload.uploadToGcs = async (request, h, gcsFolder) => {
     });
 
     stream.on("finish", () => {
-      const publicUrl = getPublicUrl(gcsname);
-      resolve(h.response({ url: publicUrl }).code(200));
+        const publicUrl = getPublicUrl(gcsname);
+        resolve(h.response({ url: publicUrl }).code(200));
     });
 
     stream.end(file._data);
