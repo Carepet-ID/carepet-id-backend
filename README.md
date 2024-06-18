@@ -39,13 +39,13 @@ npm install
 - Run database migration
 
 ```
-npx sequelize-cli db:migrate
+npm run migrate:dev
 ```
 
-- Run all seed files
+- Seed all tables
 
 ```
-npx sequelize-cli db:seed:all
+npm run seed:dev
 ```
 
 - Run the application use terminal `Ubuntu(WSL)`
@@ -95,5 +95,5 @@ npm run start:dev
   - Ingress control: `All`
   - Authentication: `Allow unauthenticated invocations`
   - Service account: `Carepet Cloud Run Service`
-  - Set NODE_ENV when deploy to Cloud Run: `--set-env-vars "NODE_ENV=production"`
+  - Set NODE_ENV when deploy: `--set-env-vars "NODE_ENV=production"`
 - The required outcomes is `CAREPET_API` (URL Carepet API service)
