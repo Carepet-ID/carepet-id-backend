@@ -5,10 +5,6 @@
 </div>
 <h1 align="center" id="title">Carepet ID</h1>
 
-DOCUMENTATION CarePet API
-
-[CarePet Documentation API](https://documenter.getpostman.com/view/25237952/2sA3XSC2Jr)
-
 <h2>🛠️ Installation Steps:</h2>
 <h2>Development</h2>
 
@@ -101,3 +97,7 @@ npm run start:dev
   - Service account: `Carepet Cloud Run Service`
   - Set NODE_ENV when deploy: `--set-env-vars "NODE_ENV=production"`
 - The required outcomes is `CAREPET_API` (URL Carepet API service)
+
+<h2>API Documentation</h2>
+
+The details of the API documentation can be accessed at [here](https://documenter.getpostman.com/view/25237952/2sA3XSC2Jr)
