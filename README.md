@@ -95,5 +95,5 @@ npm run start:dev
   - Ingress control: `All`
   - Authentication: `Allow unauthenticated invocations`
   - Service account: `Carepet Cloud Run Service`
-  - Set NODE_ENV: --set-env-vars "NODE_ENV=production"
+  - Set NODE_ENV when deploy to Cloud Run: `--set-env-vars "NODE_ENV=production"`
 - The required outcomes is `CAREPET_API` (URL Carepet API service)
