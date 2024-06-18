@@ -27,7 +27,7 @@ DB_HOST="<CLOUD_SQL_PUBLIC_iP>"
 DB_NAME="<CLOUD_SQL_DATABASE_NAME>"
 DB_PASSWORD="<CLOUD_SQL_PASSWORD>"
 DB_USERNAME="<CLOUD_SQL_USERNAME>"
-IMG_UPLOAD="<IMG_UPLOAD_CREDENTIALS_KEY>"
+BUCKET_NAME="<BUCKET_NAME>"
 JWT_SECRET="<JWT_SECRET>"
 JWT_EXPIRATION="<JWT_EXPIRATION>"
 MODEL_URL="MODEL_MACHINE_LEARNING_URL"
@@ -71,26 +71,24 @@ npm run start:dev
 
 - Create a bucket
   - Standard default class
-  - Enforce public access prevention
-  - Fine-grained access control
+  - Uncheck Enforce public access prevention
+  - Uniform access control
 - The required outcomes is `BUCKET_NAME`
 
 <h3>Secret Manager</h3>
 
 - Create several secret for environments
 - An example can be seen in the image below
-![secret manager](https://github.com/Carepet-ID/carepet-id-backend/assets/90903908/e5f66338-4068-422e-b394-8638c921968c)
+![Secret Manager](https://github.com/Carepet-ID/carepet-id-backend/assets/90903908/dd11abbd-e24b-424e-962b-d401acab441d)
 
 <h3>Service Account</h3>
 
-- Create two new service accounts
-  - Image Upload Creator
-    - Storage Object Creator
+- Create new service accounts
   - Carepet Cloud Run Service
     - Secret Manager Secret Accessor role
-    - Cloud Run Admin role
+    - Storage object admin
 - An example can be seen in the image below
-![Screenshot 2024-06-15 123742](https://github.com/Carepet-ID/carepet-id-backend/assets/90903908/4d496a40-fb86-4c18-a579-81fa3f007632)
+![Service Account](https://github.com/Carepet-ID/carepet-id-backend/assets/90903908/1bc8aed3-977f-41f0-bb18-00c718f05e83)
 
 <h3>Cloud Run</h3>
 
@@ -100,32 +98,5 @@ npm run start:dev
   - Ingress control: `All`
   - Authentication: `Allow unauthenticated invocations`
   - Service account: `Carepet Cloud Run Service`
-- The required outcomes is `CAREPET_API_SERVICE` (URL Carepet API service)
+- The required outcomes is `CAREPET_API` (URL Carepet API service)
 
-<br>
-<h2>🗃️ Folder Structure:</h2>
-
-```
-carepet-api/
-├── config/
-│   └── config.json
-├── controllers/
-│   ├── userController.js
-│   └── diseaseController.js
-├── models/
-│   ├── index.js
-│   ├── user.js
-│   └── disease.js
-├── routes/
-│   ├── index.js
-│   ├── userRoutes.js
-│   └── diseaseRoutes.js
-├── services/
-│   ├── userService.js
-│   └── diseaseService.js
-├── .env
-├── .gitignore
-├── server.js
-├── package.json
-└── README.md
-```
