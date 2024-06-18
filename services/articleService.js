@@ -18,13 +18,13 @@ const getArticlesByCategory = async (category) => {
     throw error;
   }
 };
-const getArticleById = async (articleId) => {
+const getArticleById = async (id) => {
   try {
-    const article = await Article.findByPk(articleId);
+    const article = await Article.findByPk(id);
     if (!article) {
       throw Boom.notFound("Article not found");
     }
-    return articles;
+    return article;
   } catch (error) {
     throw error;
   }
