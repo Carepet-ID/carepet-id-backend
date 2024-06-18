@@ -1,77 +1,107 @@
+<div align="center">
+  
+![Carepet Logo](https://github.com/Carepet-ID/carepet-id-backend/assets/90903908/b7b993cf-3c98-4bef-b478-cb6a12313e74)
+
+</div>
 <h1 align="center" id="title">Carepet ID</h1>
 
 <h2>🛠️ Installation Steps:</h2>
-<p>1. Clone this repository</p>
+<h2>Development</h2>
 
+- Clone this repository
+  
 ```
 git clone https://github.com/Carepet-ID/carepet-id-backend.git
 ```
 
-<p>2. Change directory</p>
+- Change directory
 
 ```
 cd carepet-id-backend
 ```
 
-<p>3. Install project depedencies</p>
+- Create `.env` file with the following contents
+
+```
+DB_HOST="<CLOUD_SQL_PUBLIC_iP>"
+DB_NAME="<CLOUD_SQL_DATABASE_NAME>"
+DB_PASSWORD="<CLOUD_SQL_PASSWORD>"
+DB_USERNAME="<CLOUD_SQL_USERNAME>"
+IMG_UPLOAD="<IMG_UPLOAD_CREDENTIALS_KEY>"
+JWT_SECRET="<JWT_SECRET>"
+JWT_EXPIRATION="<JWT_EXPIRATION>"
+MODEL_URL="MODEL_MACHINE_LEARNING_URL"
+```
+
+- Install project depedencies
 
 ```
 npm install
 ```
-<p>4. Run Database Migration</p>
+
+- Run database migration
 
 ```
 npx sequelize-cli db:migrate
 ```
 
-<p>5. Run All Seed Files</p>
+- Run all seed files
 
 ```
 npx sequelize-cli db:seed:all
 ```
-<p>6. Change projectId in module/imgUpload.js</p>
 
-```
-projectId: "your-project-id"
-```
-
-<p>7. Change bucketName in module/imgUpload.js</p>
-
-```
-bucketName = "your-bucket-name"
-```
-<p>8. Create .env and fill in the text below</p>
-
-```
-MODEL_URL=(your_model_url)
-JWT_SECRET=(free)
-JWT_EXPIRATION=(free)
-PORT=(free)
-```
-<p>9. Run the application use Ubuntu(WSL)</p>
+- Run the application use Ubuntu(WSL)
 
 ```
 npm run start:dev
 ```
-<br>
-<br>
-<hr>
-<br>
-<h2>ERD Detection Skin Disease</h2>
-<img width="338" alt="ERD" src="https://github.com/Carepet-ID/carepet-id-backend/assets/160591485/9431b786-d37e-4eec-8bed-1ab807631bb1">
 
+<h2>Deployment</h2>
+<p>The unspecified aspects can be adjusted individually or using default values. Additionally, it also allows for enhancing various aspects such as Cloud SQL configuration.</p>
+<h3>Cloud SQL</h3>
 
-<br>
-<br>
-<hr>
-<br>
-<h2>Architecture:</h2>
-<img width="422" src="https://github.com/Carepet-ID/carepet-id-backend/assets/160591485/da6e3bb5-0f32-4258-80b5-a92f1cbb3607">
+- Create a MySQL instance
+  - Connections with Public IP, specify CIDR ranges e.g. 0.0.0.0/0
+  - Create a new database
+  - Create a new user account
+- The required outcomes is `DATABASE_PUBLIC_IP` with content
 
+<h3>Cloud Storage</h3>
 
-<br>
-<br>
-<hr>
+- Create a bucket
+  - Standard default class
+  - Enforce public access prevention
+  - Fine-grained access control
+- The required outcomes is `BUCKET_NAME`
+
+<h3>Secret Manager</h3>
+
+- Create several secret for environments
+- An example can be seen in the image below
+![secret manager](https://github.com/Carepet-ID/carepet-id-backend/assets/90903908/e5f66338-4068-422e-b394-8638c921968c)
+
+<h3>Service Account</h3>
+
+- Create two new service accounts
+  - Image Upload Creator
+    - Storage Object Creator
+  - Carepet Cloud Run Service
+    - Secret Manager Secret Accessor role
+    - Cloud Run Admin role
+- An example can be seen in the image below
+![Screenshot 2024-06-15 123742](https://github.com/Carepet-ID/carepet-id-backend/assets/90903908/4d496a40-fb86-4c18-a579-81fa3f007632)
+
+<h3>Cloud Run</h3>
+
+- Submit a build using Google Cloud Build
+- Create new service with the carepet api container image
+  - Environment variables from secrets
+  - Ingress control: `All`
+  - Authentication: `Allow unauthenticated invocations`
+  - Service account: `Carepet Cloud Run Service`
+- The required outcomes is `CAREPET_API_SERVICE` (URL Carepet API service)
+
 <br>
 <h2>🗃️ Folder Structure:</h2>
 
