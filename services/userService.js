@@ -32,11 +32,13 @@ const register = async (payload) => {
 const validateUser = async (username, password) => {
   try {
     const user = await User.findOne({ where: { username: username } });
-    const isPasswordValid = await bcrypt.compare(password, user.password);
 
     if (!user) {
       return null;
     }
+
+    const isPasswordValid = await bcrypt.compare(password, user.password);
+  
     if (!isPasswordValid) {
       return null;
     }
