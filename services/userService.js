@@ -4,6 +4,21 @@ const bcrypt = require("bcrypt");
 
 const register = async (payload) => {
   try {
+    const isUsernameExist = await User.findOne({
+      where: { username: payload.username },
+    });
+    const isEmailExist = await User.findOne({
+      where: { email: payload.email },
+    });
+
+    if (isUsernameExist) {
+      throw new Error("Username already exists");
+    }
+
+    if (isEmailExist) {
+      throw new Error("Email already exists");
+    }
+
     const user = await User.create({
       ...payload,
     });
