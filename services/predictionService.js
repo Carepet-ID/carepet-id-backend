@@ -14,12 +14,7 @@ async function predictClassification(model, image) {
     const confidenceScore = Math.max(...score) * 100;
 
     const classes = [
-      "dandruff",
-      "dermatitis",
-      "earinfection",
-      "fleas",
-      "ringworm",
-      "skintumors",
+      'dandruff', 'dermatitis', 'earinfection', 'fleas', 'healthy', 'ringworm', 'skintumors'
     ];
 
     const classResult = tf.argMax(prediction, 1).dataSync()[0];

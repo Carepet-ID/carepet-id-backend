@@ -37,7 +37,7 @@ const getDiseaseById = async (id) => {
 
 const createDisease = async (payload) => {
   try {
-    const disease = await Disease.create(...payload);
+    const disease = await Disease.create({...payload});
     return disease;
   } catch (error) {
     throw error;
